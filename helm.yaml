@@ -19,7 +19,6 @@ spec:
 destination:
     server: https://kubernetes.default.svc
     namespace: prince-ns
-
   syncPolicy:
     automated:
       prune: true
