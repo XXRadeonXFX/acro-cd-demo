@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/XXRadeonXFX/acro-cd-demo.git
     targetRevision: main
-    path: ./
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: prince-demo
