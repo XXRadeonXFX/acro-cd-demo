@@ -7,15 +7,15 @@ spec:
   project: default
   source:
     repoURL: https://github.com/XXRadeonXFX/acro-cd-demo.git
-    path: helm-dir
     targetRevision: main
+    path: helm-dir
     helm:
       valueFiles:
         - values-prod.yaml
       parameters:
         - name: replicaCount
           value: "5"
-destination:
+  destination:
     server: https://kubernetes.default.svc
     namespace: prince-ns
   syncPolicy:
