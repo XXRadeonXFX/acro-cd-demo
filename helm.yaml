@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-demo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/XXRadeonXFX/acro-cd-demo.git
+    path: helm-dir
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values-prod.yaml
+      parameters:
+        - name: replicaCount
+          value: "5"
+  
+destination:
+    server: https://kubernetes.default.svc
+    namespace: prince-ns
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
